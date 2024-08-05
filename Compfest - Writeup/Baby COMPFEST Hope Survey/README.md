@@ -1,13 +1,5 @@
 # COMPFEST CTF HACKER CLASS WRITEUP
 
-:::info
-:bulb: This write-up is written by Abyan Hafiizh. 
-:::
-
-## Table of Contents
-
-[TOC]
-
 ## Baby COMPFEST Hope Survey
 
 ### Source Code
