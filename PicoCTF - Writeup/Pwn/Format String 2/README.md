@@ -39,7 +39,7 @@ int main() {
 }
 ```
 
-Pada `printf(buff)` terlihat adanya keretanan format string, memanfaatkan kerentanan itu kita bisa menggunakan payload dibawah untuk mengubah nilai sus menjadi `0x67616c66`
+In the `printf(buf)` line, a format string vulnerability is apparent. By exploiting this vulnerability, we can use the following payload to change the value of `sus` to `0x67616c66`.
 
 ### **Payload:**
 
@@ -47,55 +47,55 @@ Pada `printf(buff)` terlihat adanya keretanan format string, memanfaatkan kerent
 payload = b'%26464d,%20$hn%1281dAAAA%19$hnx,%40$llx,\x60\x40\x40\x00\x00\x00\x00\x00\x62\x40\x40\x00\x00\x00\x00\x00'
 ```
 
-Payload ini dibangun untuk menulis dua bagian dari nilai `0x67616c66` ke variabel `sus` yang terletak di dua alamat memori yang berurutan (`0x404060` dan `0x404062`).
+This payload is constructed to write two parts of the value `0x67616c66` into the `sus` variable, which is located at two consecutive memory addresses (`0x404060` and `0x404062`).
 
-### **Bagian-Bagian Payload:**
+### **Payload Breakdown:**
 
 1. **`%26464d,%20$hn`**:
    - `%26464d`:
-     - Ini mencetak `26464` karakter sebelum bagian berikutnya dari format string dievaluasi. Nilai ini dipilih karena kita ingin menulis nilai `0x6761` (dalam desimal `26465`) ke memori.
-     - `d` digunakan untuk menghasilkan output string dengan panjang tertentu, yaitu 26464 karakter.
+     - This prints `26464` characters before the next part of the format string is evaluated. This number is chosen because we want to write the value `0x6761` (in decimal `26465`) into memory.
+     - `d` is used to generate an output string with a length of `26464` characters.
    - `%20$hn`:
-     - `hn` menulis dua byte dari nilai karakter yang telah dicetak (`26464`) ke alamat memori yang ditentukan oleh argumen ke-20 dalam stack.
-     - Alamat ini adalah `0x404060`, yang merupakan bagian pertama dari `sus`.
+     - `hn` writes two bytes of the number of characters printed (`26464`) to the memory address specified by the 20th argument on the stack.
+     - This address is `0x404060`, which corresponds to the first part of `sus`.
 
 2. **`%1281dAAAA%19$hn`**:
    - `%1281d`:
-     - Ini mencetak `1281` karakter tambahan, menjadikan total karakter yang dicetak menjadi `26464 + 1281 = 27745`.
-     - Nilai ini dipilih karena kita ingin mencapai total `27750` karakter (sesuai dengan nilai `0x6c66` dalam desimal).
+     - This prints `1281` additional characters, making the total number of printed characters `26464 + 1281 = 27745`.
+     - This number is chosen because we want to reach a total of `27750` characters (matching the value `0x6c66` in decimal).
    - `AAAA`:
-     - Ini adalah padding 4-byte untuk menjaga alignment dari data dalam stack.
+     - This is 4-byte padding to maintain alignment in the stack data.
    - `%19$hn`:
-     - `hn` menulis dua byte dari nilai total karakter yang dicetak (`27745`) ke alamat memori yang ditentukan oleh argumen ke-19 dalam stack.
-     - Alamat ini adalah `0x404062`, yang merupakan bagian kedua dari `sus`.
+     - `hn` writes two bytes of the total number of characters printed (`27745`) to the memory address specified by the 19th argument on the stack.
+     - This address is `0x404062`, which corresponds to the second part of `sus`.
 
 3. **`x,%40$llx,\x60\x40\x40\x00\x00\x00\x00\x00\x62\x40\x40\x00\x00\x00\x00\x00`**:
    - `x`:
-     - Mungkin ini adalah kesalahan atau tidak relevan untuk eksploitasi utama, tapi biasanya `x` tidak melakukan apa-apa.
+     - This might be an error or irrelevant to the main exploit, but generally, `x` does nothing.
    - `,%40$llx`:
-     - Ini mencetak nilai dari alamat yang ditentukan dalam stack, tapi tidak relevan untuk eksploitasi ini.
+     - This prints the value from the address specified in the stack, but it’s not relevant to this exploit.
    - `\x60\x40\x40\x00\x00\x00\x00\x00\x62\x40\x40\x00\x00\x00\x00\x00`:
-     - Ini adalah dua alamat memori dalam format little-endian.
-     - `\x60\x40\x40\x00\x00\x00\x00\x00` adalah alamat pertama (`0x404060`).
-     - `\x62\x40\x40\x00\x00\x00\x00\x00` adalah alamat kedua (`0x404062`).
+     - These are the two memory addresses in little-endian format.
+     - `\x60\x40\x40\x00\x00\x00\x00\x00` is the first address (`0x404060`).
+     - `\x62\x40\x40\x00\x00\x00\x00\x00` is the second address (`0x404062`).
 
-### **Cara Kerja Payload:**
+### **How the Payload Works:**
 
-1. **Langkah Pertama**:
-   - Payload mulai dengan mencetak 26464 karakter menggunakan `%26464d`.
-   - Kemudian, `26464` dicetak, yang membuat posisi argumen stack ke-20 siap untuk diubah.
-   - `%20$hn` menulis nilai `0x6761` (karakter `26464` ditambah `1` karena `hn` menulis 2 byte) ke alamat `0x404060`.
+1. **Step One**:
+   - The payload starts by printing `26464` characters using `%26464d`.
+   - Then, `26464` is printed, making the 20th stack argument ready to be modified.
+   - `%20$hn` writes the value `0x6761` (the printed characters plus 1 since `hn` writes 2 bytes) to the address `0x404060`.
 
-2. **Langkah Kedua**:
-   - Kemudian, payload mencetak 1281 karakter tambahan menggunakan `%1281d`.
-   - Sekarang, total karakter yang dicetak adalah `26464 + 1281 = 27745`.
-   - `AAAA` digunakan sebagai padding agar menjaga alignment pada stack.
-   - `%19$hn` kemudian menulis nilai `0x6c66` ke alamat `0x404062`.
+2. **Step Two**:
+   - The payload then prints an additional `1281` characters using `%1281d`.
+   - Now, the total characters printed are `26464 + 1281 = 27745`.
+   - `AAAA` is used as padding to maintain alignment in the stack.
+   - `%19$hn` then writes the value `0x6c66` to the address `0x404062`.
 
-3. **Hasil Akhir**:
-   - Nilai `0x6761` ditulis ke alamat `0x404060`.
-   - Nilai `0x6c66` ditulis ke alamat `0x404062`.
-   - Jika payload bekerja dengan benar, variabel `sus` sekarang diubah dari `0x21737573` menjadi `0x67616c66` (yang dalam ASCII adalah 'gafl'), sehingga eksploitasi berhasil dan program akan mencetak flag.
+3. **Final Result**:
+   - The value `0x6761` is written to the address `0x404060`.
+   - The value `0x6c66` is written to the address `0x404062`.
+   - If the payload works correctly, the `sus` variable is now changed from `0x21737573` to `0x67616c66` (which in ASCII is 'gafl'), allowing the exploit to succeed and the program to print the flag.
 
 ### Exploit
 ```python
@@ -122,3 +122,5 @@ picoCTF{f0rm47_57r?_f0rm47_m3m_e371fb20}
 
 [*] Got EOF while reading in interactive
 ```
+
+This shows how the exploit works to manipulate the `sus` variable and obtain the flag.
