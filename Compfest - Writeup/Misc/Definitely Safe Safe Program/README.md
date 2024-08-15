@@ -2,7 +2,7 @@
 
 ### Source Code
 
-Pada challenge kali ini diberikan kode sebagai berikut
+In this challenge, the following code was provided:
 
 ```python
 """
@@ -34,26 +34,24 @@ if __name__ == "__main__":
             
         result = eval(eval(cmd))
         print(str(result)[:25])
-
-
 ```
-Pada comment section dijelaskan bahwa program ini mirip seperti `REPL` python,  mungkin kita bisa melakukan beberapa command yang bisa membuat kita untuk mendapatkan flag. 
 
-walaupun kode ini di desain seperti `REPL` python, banyak kata kata yang di blacklist seperti `os`, `(`, `)`, `import`, `subprocess`, dan masih banyak lagi, hampir terbilang tidak mungkin untuk melakukan `RCE` pada program ini.
+The comment section explains that this program is similar to the Python `REPL`, and we might be able to use some commands to retrieve the flag.
 
-namun kita bisa memanfaatkan python dunder dan code object untuk mendapatkan flag, berikut merupakan article yang menarik seputar dunder dan code object:
+Even though this code is designed like a Python `REPL`, many keywords are blacklisted such as `os`, `(`, `)`, `import`, `subprocess`, and many more, making it almost impossible to execute Remote Code Execution (RCE) on this program.
 
-https://www.codeguage.com/courses/python/functions-code-objects
+However, we can leverage Python dunder methods and code objects to retrieve the flag. Here are some interesting articles about dunder methods and code objects:
 
-https://stackoverflow.com/questions/7791574/how-can-i-print-a-python-files-docstring-when-executing-it
+- [Functions and Code Objects](https://www.codeguage.com/courses/python/functions-code-objects)
+- [Printing Python File's Docstring](https://stackoverflow.com/questions/7791574/how-can-i-print-a-python-files-docstring-when-executing-it)
 
 ### Flag Part 1
 
-Untuk membaca flag part 1 terbilang cukup simpel, dengan menggunakan command `__doc__` kita bisa membaca isi dari comment section, atau isi dari docs pada document, namun program hanya menampilkan 25 karakter saja, ini menjadi tantangan untuk kita.
+Reading the first part of the flag is fairly simple. By using the `__doc__` command, we can read the contents of the comment section or the document's docstring. However, the program only displays the first 25 characters, which presents a challenge.
 
-kita bisa melakukan command seperti `__doc__[281:]` untuk melakukan print comment  dari karakter ke 281 sampai akhir, ini akan memberikan kita flag part 1, namun masalahnya kita tidak bisa menginputkan angka karena semua angka ada di dalam blacklist.
+We can use a command like `__doc__[281:]` to print the comment starting from the 281st character to the end, which will give us the first part of the flag. The problem is that we can't input numbers directly because all numbers are blacklisted.
 
-untuk menulis angka pada `__doc__[<angka>:]` kita bisa memanfaatkan fungsi dunder code objects yang melakukan return angka, berikut merupakan contohnya:
+To write numbers in `__doc__[<number>:]`, we can use the dunder method code objects that return numbers. Here's an example:
 
 ```python
 >>> safe.__code__.co_argcount
@@ -65,34 +63,27 @@ untuk menulis angka pada `__doc__[<angka>:]` kita bisa memanfaatkan fungsi dunde
 >>> safe.__code__.co_flags
 3
 ```
-kita tahu bahwa flag berada pada karakter ke 281 jadi, kita bisa memanfaatkan return angka diatas untuk menulis angka 281 pada `__doc__` untuk mendapatkan flag part 1 berikut contohnya:
+
+We know that the flag starts at the 281st character, so we can use the above return values to write 281 in `__doc__` to get the first part of the flag. Here's an example:
+
 ```python
->>> safe.__code__.co_stacksize*safe.__code__.co_flags
+>>> safe.__code__.co_stacksize * safe.__code__.co_flags
 12
->>> __doc__[safe.__code__.co_firstlineno**safe.__code__.co_flags//result:]
+>>> __doc__[safe.__code__.co_firstlineno**safe.__code__.co_flags // result:]
 COMPFEST16{fake_flag_:v
 ```
 
-kode diatas akan melakukan print doc dimulai dari karakter ke 281 sampai akhir ini akan memberikan kita flag part 1.
+The code above will print the docstring starting from the 281st character to the end, giving us the first part of the flag.
 
-### Flag part 2
-Untuk mendapatkan flag part 2 kita harus melihat isi dari list blacklist, dan flag berada pada array ke 17, untuk melihat flag kita bisa memanfaatkan python code objects untuk mendapatkan flag, berikut contohnya:
+### Flag Part 2
+
+To retrieve the second part of the flag, we need to look at the contents of the blacklist array, and the flag is located at the 17th element in the array. To view the flag, we can use Python code objects to retrieve it. Here's an example:
 
 ```python
-# untuk mendapatkan flag kita harus melakukan command safe.__code__.co_varnames[1][17]
-# kita bisa memanfaatkan kode objek yang mereturn angka untuk mendapatkan flag
->>> safe.__code__.co_consts[safe.__code__.co_argcount][safe.__code__.co_stacksize*safe.__code__.co_stacksize]
+# To get the flag, we need to execute the command safe.__code__.co_varnames[1][17]
+# We can leverage code objects that return numbers to retrieve the flag
+>>> safe.__code__.co_consts[safe.__code__.co_argcount][safe.__code__.co_stacksize * safe.__code__.co_stacksize]
 th1s_1s_f4k3_fl4gg783s9dD
 ```
 
-
-
-
-
-
-
-
-
-
-
-
+Thank you.
