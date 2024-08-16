@@ -1,4 +1,6 @@
-# Compfest Definitely Safe Safe Program Writeup - Abyan Hafiizh
+# Compfest Definitely Safe Safe Program Writeup
+
+written by Abyan Hafiizh
 
 ### Source Code
 
