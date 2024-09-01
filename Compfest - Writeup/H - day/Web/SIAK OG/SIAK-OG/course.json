@@ -1,0 +1,30 @@
+{
+    "Calculus 1": {
+        "name": "Calculus 1",
+        "cost": 3,
+        "available": true,
+        "taken": false,
+        "description":"2+2 is 4, -1 that's 3 QUICK MEFS"
+    },
+    "SOSI": {
+        "name": "SOSI",
+        "cost": 3,
+        "available": true,
+        "taken": false,
+        "description": "Sistem Operasi untuk Sistem Informasi"
+    },
+    "StatProb": {
+        "name": "StatProb",
+        "cost": 3,
+        "available": true,
+        "taken": false,
+        "description": "Statistika Probabilitas (IK)"
+    },
+    "PKPL": {
+        "name": "PKPL",
+        "cost": 4,
+        "available": true,
+        "taken": false,
+        "description": "Pengantar Keamanan Perangkat Lunak"
+    }
+}

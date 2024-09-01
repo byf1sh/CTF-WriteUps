@@ -1,0 +1,26 @@
+{
+  "name": "web_q1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "watch": "concurrently \"nodemon index.js\" \"postcss public/stylesheets/tailwind.css -o public/stylesheets/style.css --watch\""
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "autoprefixer": "^10.4.19",
+    "concurrently": "^8.2.2",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.4.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.2"
+  }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylesheets/style.css">
+    <title>SIAK-OG</title>
+</head>
+
+<body class="bg-lightgray text-xs font-semibold">
+    <div class="rounded-lg m-4 relative shadow-lg shadow-shadow bg-white">
+        <div id="header" class="bg-gradient-to-t from-primary to-secondary flex flex-row p-2 pl-4 rounded-t-lg">
+            <img src="./images/logo.png" alt="logo" class="h-10 w-10">
+            <h1 class="text-3xl text-white">SIAK <span class="text-yellow">OG</span></h1>
+        </div>
+        <div id="navbar" class="bg-nav flex flex-row border border-lightgray content-center text-white [&_*]:border [&_*]:border-lightgray [&_*]:p-1">
+            <a href="" class="hover:bg-hover">>></a>
+            <a href="/" class="hover:bg-hover">Home</a>
+            <a href="/edit-irs" class="hover:bg-hover">Edit IRS</a>
+        </div>
+        <hr class="border-yellow border-2">
+        <hr class="border-lightgray">
+        <hr class="border-white">
+        <div class="bg-lightergray text-nav text-lg font-light px-4 py-1">
+            <h2>Course taken</h2>
+        </div>
+        <hr class="border-lightgray">
+        <hr class="border-white">
+        <div id="content" class="border-lightergray border-x-4 border-y-0 p-2 pb-4">
+            <table class="w-full table-auto ">
+                <tr>
+                    <td class="w-16">Course</td>
+                    <td class="w-10">Credit</td>
+                    <td>Description</td>
+                </tr>
+                <% let courseCount = 0 %>
+                <% Object.keys(courses).forEach( course => { 
+                    if(courses[course].taken) { %>
+                    <tr class="<%= courseCount % 2 == 0 ? "bg-lightergray" : "bg-white" %>">
+                        <% courseCount += 1 %>
+                        <td><%= courses[course].name %></td>
+                        <td><%= courses[course].cost %> SKS</td>
+                        <td><%= courses[course].description %></td>
+                    </tr>
+                    <% }
+                }) %>
+                <% if(!courseCount) { %>
+                    <tr>
+                        <td colspan="3" class="font-normal bg-lightred px-2">No course taken</td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+        <hr class="border-lightgray">
+        <hr class="border-white">
+        <div id="footer" class="bg-lightergray p-1 text-gray rounded-b-lg">
+            <p class="pl-2">COMPFEST16 &copy; 2024, made by PapaChicken</p>
+        </div>
+    </div>
+</body>
+
+</html>

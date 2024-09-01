@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylesheets/style.css">
+    <title>SIAK-OG</title>
+</head>
+
+<body class="bg-lightgray text-xs font-semibold">
+    <div class="rounded-lg m-4 relative shadow-lg shadow-shadow bg-white">
+        <div id="header" class="bg-gradient-to-t from-primary to-secondary flex flex-row p-2 pl-4 rounded-t-lg">
+            <img src="./images/logo.png" alt="logo" class="h-10 w-10">
+            <h1 class="text-3xl text-white">SIAK <span class="text-yellow">OG</span></h1>
+        </div>
+        <div id="navbar" class="bg-nav flex flex-row border border-lightgray content-center text-white [&_*]:border [&_*]:border-lightgray [&_*]:p-1">
+            <a href="" class="hover:bg-hover">>></a>
+            <a href="/" class="hover:bg-hover">Home</a>
+            <a href="/edit-irs" class="hover:bg-hover">Edit IRS</a>
+        </div>
+        <hr class="border-yellow border-2">
+        <hr class="border-lightgray">
+        <hr class="border-white">
+        <div class="bg-lightergray text-nav text-lg font-light px-4 py-1">
+            <h2>Edit IRS</h2>
+        </div>
+        <hr class="border-lightgray">
+        <hr class="border-white">
+        <div id="content" class="border-lightergray border-x-4 border-y-0 p-2 pb-4">
+            <form>
+                <table>
+                    <tr>
+                        <td class="w-16">Course</td>
+                        <td class="w-20">Status</td>
+                        <td class="w-12">Credit</t  d>
+                    </tr>
+                    <% Object.keys(courses).forEach( course => { %>
+                    <tr>
+                        <td><%= courses[course].name %></td>
+                        <td><%= courses[course].available ? "Available" : "Not Available" %></td>
+                        <td><%= courses[course].cost %> SKS</td>
+                        <td><input type="checkbox" name="course" value="<%= courses[course].name %>" <%= courses[course].available ? "enabled":"disabled" %> <%= courses[course].taken ? "checked":"unchecked" %>></td>
+                    </tr>
+                    <% }) %>
+                </table>
+                <button type="submit" class="mt-4 bg-gray hover:bg-lightgray px-4 py-1 text-white rounded-full">Submit</button>
+            </form>
+        </div>
+        <hr class="border-lightgray">
+        <hr class="border-white">
+        <div id="footer" class="bg-lightergray p-1 text-gray rounded-b-lg">
+            <p class="pl-2">COMPFEST16 &copy; 2024, made by PapaChicken</p>
+        </div>
+    </div>
+
+    <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit', async event => {
+            event.preventDefault();
+            const allCourses = Array.from(form.querySelectorAll('input[name="course"]')).map(input => input.value);
+            const checkedCourses = Array.from(form.querySelectorAll('input[name="course"]:checked')).map(input => input.value);
+            const courses = allCourses.reduce((obj, course) => {
+                obj[course] = {taken: checkedCourses.includes(course)};
+                return obj;
+            }, {});
+            const url = `/api/v1/edit-irs`;
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(courses)
+            });
+            if (response.ok) {
+                alert('Successfully updated');
+            } else {
+                const error = await response.text();
+                alert(error);
+            }
+        });
+    </script>
+</body>
+
+</html>
