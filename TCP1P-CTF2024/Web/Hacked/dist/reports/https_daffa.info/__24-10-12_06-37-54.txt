@@ -1,0 +1,11 @@
+# Dirsearch started Sat Oct 12 06:38:26 2024 as: /usr/lib/python3/dist-packages/dirsearch/dirsearch.py -u https://daffa.info/
+
+200     6KB  https://daffa.info/404.html
+301   178B   https://daffa.info/about    -> REDIRECTS TO: https://daffa.info/about/
+301   178B   https://daffa.info/assets    -> REDIRECTS TO: https://daffa.info/assets/
+403   564B   https://daffa.info/assets/
+301   178B   https://daffa.info/categories    -> REDIRECTS TO: https://daffa.info/categories/
+200   809B   https://daffa.info/index.xml
+200    64B   https://daffa.info/robots.txt
+200   971B   https://daffa.info/sitemap.xml
+301   178B   https://daffa.info/tags    -> REDIRECTS TO: https://daffa.info/tags/
