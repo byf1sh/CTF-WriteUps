@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8081:8080"
+    restart: always
+    networks:
+      - internal
+    cap_add:
+      - NET_ADMIN
+    privileged: true
+
+networks:
+  internal:
+    driver: bridge
