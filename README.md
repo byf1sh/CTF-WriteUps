@@ -139,6 +139,8 @@ _Injeksi perintah ke sistem._
 ### ☕ Java
 1. **[Cyber Jawara International - Java Box - Writeup](https://github.com/byf1sh/CTF-WriteUps/tree/main/Cyberjawara%20International%202024/Web/web-javabox)**
 
+### ☕ UUID1
+1. **[MCTF Cute n Wonder Writeup - Web]([https://github.com/byf1sh/CTF-WriteUps/tree/main/Cyberjawara%20International%202024/Web/web-javabox](https://github.com/byf1sh/CTF-WriteUps/tree/main/MCTF%20-%20Writeup/Cute%20n%20Wonder))**
 ---
 
 **[⬆ Kembali ke Atas](#daftar-isi)**
