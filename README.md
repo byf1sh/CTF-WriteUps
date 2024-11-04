@@ -77,6 +77,7 @@ _Eksploitasi waktu eksekusi untuk akses bersamaan._
 
 1. **[ez-start - Web - Deadsec CTF 2024](https://github.com/byf1sh/CTF-WriteUps/tree/main/DeadsecCTF2024/Web/ezstart)**
 2. **[Via Web Socket - funny-lfr Writeup - Web - Sekai CTF](https://github.com/byf1sh/CTF-WriteUps/tree/main/SekaiCTF%20-%202024/Web/funny-lfr#funny-lfr-writeup---web---sekai-ctf)**
+3. **[Race condition via Webscoket- tictacBINGO](https://github.com/byf1sh/CTF-WriteUps/tree/main/USCctf%20-%20Writeup/tictacbingo)**
 
 ---
 
@@ -85,6 +86,7 @@ _Injeksi SQL untuk manipulasi basis data._
 
 1. **[.NET LINQ Injection - Intruder - Web - SekaiCTF 2024](https://github.com/byf1sh/CTF-WriteUps/tree/main/SekaiCTF%20-%202024/Web/Intruder)**
 2. **[Via PHP Deserialization - Cereal Writeup - Web - tamuctf2024](https://github.com/byf1sh/CTF-WriteUps/tree/main/tamuctf2024-Writeup/Web/Cereal)**
+3. **[Boolean Based SQLi - Spooky Query Leaks](https://github.com/byf1sh/CTF-WriteUps/tree/main/USCctf%20-%20Writeup/Spooky%20Quert%20Leaks)**
 
 ---
 
@@ -114,6 +116,10 @@ _Injeksi perintah ke sistem._
 ---
 
 ## Based on System
+
+### 😈 Web Socket
+1. **[tictactocket](https://github.com/byf1sh/CTF-WriteUps/tree/main/USCctf%20-%20Writeup/tictactoe)**
+2. **[Race condition via Webscoket- tictacBINGO](https://github.com/byf1sh/CTF-WriteUps/tree/main/USCctf%20-%20Writeup/tictacbingo)**
 
 ### 🌐 Apache
 1. **[ISITDTU - Simple - Writeup](https://github.com/byf1sh/CTF-WriteUps/tree/main/ISITDTU%20CTF%20-%20Writeup/Simple)**
