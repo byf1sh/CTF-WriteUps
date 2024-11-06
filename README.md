@@ -151,4 +151,9 @@ _Injeksi perintah ke sistem._
 1. **[Sequelize ORM version 6 - COR-CTF2024 - erm - web - Writeup](https://github.com/byf1sh/CTF-WriteUps/tree/main/corctf-2024%20-%20writeup/erm)**
 
 ---
+
+### ☕ REDIS
+1. **[ioredis(ZADD) - COR-CTF2024 - web - Writeup](https://github.com/byf1sh/CTF-WriteUps/blob/main/corctf-2024%20-%20writeup/rock-papper-scissors/rock-paper-scissors%20_%20siunam%E2%80%99s%20Website.pdf)**
+
+---
 **[⬆ Kembali ke Atas](#daftar-isi)**
