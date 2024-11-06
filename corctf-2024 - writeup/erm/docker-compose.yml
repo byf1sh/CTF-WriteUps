@@ -1,0 +1,7 @@
+services:
+  chall:
+    build: erm
+    ports:
+      - "5000:5000"
+    environment:
+      FLAG: corctf{erm?_more_like_orm_amiright?}
