@@ -87,6 +87,7 @@ _Injeksi SQL untuk manipulasi basis data._
 1. **[.NET LINQ Injection - Intruder - Web - SekaiCTF 2024](https://github.com/byf1sh/CTF-WriteUps/tree/main/SekaiCTF%20-%202024/Web/Intruder)**
 2. **[Via PHP Deserialization - Cereal Writeup - Web - tamuctf2024](https://github.com/byf1sh/CTF-WriteUps/tree/main/tamuctf2024-Writeup/Web/Cereal)**
 3. **[Boolean Based SQLi - Spooky Query Leaks](https://github.com/byf1sh/CTF-WriteUps/tree/main/USCctf%20-%20Writeup/Spooky%20Quert%20Leaks)**
+4. **[Database Leak via ORM (Sequelize ORM version 6) - COR-CTF2024 - erm - web - Writeup](https://github.com/byf1sh/CTF-WriteUps/tree/main/corctf-2024%20-%20writeup/erm)**
 
 ---
 
@@ -139,8 +140,15 @@ _Injeksi perintah ke sistem._
 ### ☕ Java
 1. **[Cyber Jawara International - Java Box - Writeup](https://github.com/byf1sh/CTF-WriteUps/tree/main/Cyberjawara%20International%202024/Web/web-javabox)**
 
-### ☕ UUID1
-1. **[MCTF Cute n Wonder Writeup - Web](https://github.com/byf1sh/CTF-WriteUps/tree/main/MCTF%20-%20Writeup/Cute%20n%20Wonder)**
 ---
 
+### ☕ UUID1
+1. **[MCTF Cute n Wonder Writeup - Web](https://github.com/byf1sh/CTF-WriteUps/tree/main/MCTF%20-%20Writeup/Cute%20n%20Wonder)**
+
+---
+
+### ☕ ORM CONFUSION
+1. **[Sequelize ORM version 6 - COR-CTF2024 - erm - web - Writeup](https://github.com/byf1sh/CTF-WriteUps/tree/main/corctf-2024%20-%20writeup/erm)**
+
+---
 **[⬆ Kembali ke Atas](#daftar-isi)**
