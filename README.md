@@ -42,6 +42,7 @@ _Eksploitasi yang memungkinkan penyerang membuat permintaan dari sisi server._
 _Inklusi file lokal untuk mengakses file sensitif._
 
 1. **[Cyber Jawara International - Java Box](https://github.com/byf1sh/CTF-WriteUps/tree/main/Cyberjawara%20International%202024/Web/web-javabox)**
+2. **[LFI to RCE via pearcmd.php - File not Found - TSA CYBER KOMINFO](https://github.com/byf1sh/CTF-WriteUps/tree/main/Cyberjawara%20International%202024/Web/web-javabox)**
 
 ---
 
@@ -124,7 +125,7 @@ _Injeksi perintah ke sistem._
 
 ### 🌐 Apache
 1. **[ISITDTU - Simple - Writeup](https://github.com/byf1sh/CTF-WriteUps/tree/main/ISITDTU%20CTF%20-%20Writeup/Simple)**
-
+2. **[Apache2 Misconf & LFI to RCE via pearcmd.php - File not Found - TSA CYBER KOMINFO](https://github.com/byf1sh/CTF-WriteUps/tree/main/Cyberjawara%20International%202024/Web/web-javabox)**
 ---
 
 ### 💎 Ruby
@@ -151,6 +152,9 @@ _Injeksi perintah ke sistem._
 1. **[Sequelize ORM version 6 - COR-CTF2024 - erm - web - Writeup](https://github.com/byf1sh/CTF-WriteUps/tree/main/corctf-2024%20-%20writeup/erm)**
 
 ---
+
+### ☕ PEAR PHP EXTENSIONS (pearcmd.php)
+1. **[LFI to RCE via pearcmd.php - File not Found - TSA CYBER KOMINFO](https://github.com/byf1sh/CTF-WriteUps/tree/main/Cyberjawara%20International%202024/Web/web-javabox)**
 
 ### ☕ REDIS
 1. **[ioredis(ZADD) - COR-CTF2024 - web - Writeup](https://github.com/byf1sh/CTF-WriteUps/blob/main/corctf-2024%20-%20writeup/rock-papper-scissors/rock-paper-scissors%20_%20siunam%E2%80%99s%20Website.pdf)**
