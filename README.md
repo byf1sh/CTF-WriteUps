@@ -42,7 +42,7 @@ _Eksploitasi yang memungkinkan penyerang membuat permintaan dari sisi server._
 _Inklusi file lokal untuk mengakses file sensitif._
 
 1. **[Cyber Jawara International - Java Box](https://github.com/byf1sh/CTF-WriteUps/tree/main/Cyberjawara%20International%202024/Web/web-javabox)**
-2. **[LFI to RCE via pearcmd.php - File not Found - TSA CYBER KOMINFO](https://github.com/byf1sh/CTF-WriteUps/tree/main/Cyberjawara%20International%202024/Web/web-javabox)**
+2. **[LFI to RCE via pearcmd.php - File not Found - TSA CYBER KOMINFO](https://github.com/byf1sh/CTF-WriteUps/tree/main/TSA%20CYBER%20KOMINFO/file%20not%20found)**
 
 ---
 
@@ -53,6 +53,8 @@ _Menyerang aplikasi web untuk menyisipkan skrip berbahaya._
 2. **[RPO - TCP1P CTF - WEB - EZweb Writeup](https://github.com/byf1sh/CTF-WriteUps/blob/main/TCP1P-CTF2024/Web/EZWeb/TCP1P%20CTF%20-%20WEB%20-%20HackedV2%20Writeup.md)**
 3. **[RPO - LuL - XSS - TCP1P Playground](https://github.com/byf1sh/CTF-WriteUps/tree/main/TCP1P-Playground/LuL)**
 4. **[Advanced XSS - Forgotten Password - Web - tamuctf-2024](https://github.com/byf1sh/CTF-WriteUps/tree/main/tamuctf2024-Writeup/Web/Imposter)**
+5. **[Advanced XSS - DOMPurify bypass with XHTML Parsing CDATA wrap with `<style>` - XSS V2 - Web - TSA KOMINFO](https://github.com/byf1sh/CTF-WriteUps/tree/main/TSA%20CYBER%20KOMINFO/xss%20v2)**
+6. **[Advanced XSS - DOMPurify 3.1.6 bypass - XSS ISITDTU](https://github.com/byf1sh/CTF-WriteUps/tree/main/ISITDTU%20CTF%20-%20Writeup/XSS)**
 
 ---
 
@@ -72,7 +74,6 @@ _Eksploitasi pada template server untuk eksekusi kode._
 4. **[Node.js Pug - TFC CTF WRITEUP](https://github.com/byf1sh/CTF-WriteUps/tree/main/TFCCTF%20-%20Writeup/Greetings)**
 
 ---
-
 ### 🕐 Race Condition  
 _Eksploitasi waktu eksekusi untuk akses bersamaan._
 
@@ -117,6 +118,10 @@ _Injeksi perintah ke sistem._
 
 ---
 
+### 🔌  Image Upload to RCE
+_Injeksi perintah ke sistem._
+1. **[101 - Web Exploitation - TSA KOMINFO](https://github.com/byf1sh/CTF-WriteUps/tree/main/TSA%20CYBER%20KOMINFO/web%20101)**
+
 ## Based on System
 
 ### 😈 Web Socket
@@ -125,7 +130,7 @@ _Injeksi perintah ke sistem._
 
 ### 🌐 Apache
 1. **[ISITDTU - Simple - Writeup](https://github.com/byf1sh/CTF-WriteUps/tree/main/ISITDTU%20CTF%20-%20Writeup/Simple)**
-2. **[Apache2 Misconf & LFI to RCE via pearcmd.php - File not Found - TSA CYBER KOMINFO](https://github.com/byf1sh/CTF-WriteUps/tree/main/Cyberjawara%20International%202024/Web/web-javabox)**
+2. **[Apache2 Misconf & LFI to RCE via pearcmd.php - File not Found - TSA CYBER KOMINFO](https://github.com/byf1sh/CTF-WriteUps/tree/main/TSA%20CYBER%20KOMINFO/file%20not%20found)**
 ---
 
 ### 💎 Ruby
@@ -154,7 +159,7 @@ _Injeksi perintah ke sistem._
 ---
 
 ### ☕ PEAR PHP EXTENSIONS (pearcmd.php)
-1. **[LFI to RCE via pearcmd.php - File not Found - TSA CYBER KOMINFO](https://github.com/byf1sh/CTF-WriteUps/tree/main/Cyberjawara%20International%202024/Web/web-javabox)**
+1. **[LFI to RCE via pearcmd.php - File not Found - TSA CYBER KOMINFO](https://github.com/byf1sh/CTF-WriteUps/tree/main/TSA%20CYBER%20KOMINFO/file%20not%20found)**
 
 ### ☕ REDIS
 1. **[ioredis(ZADD) - COR-CTF2024 - web - Writeup](https://github.com/byf1sh/CTF-WriteUps/blob/main/corctf-2024%20-%20writeup/rock-papper-scissors/rock-paper-scissors%20_%20siunam%E2%80%99s%20Website.pdf)**
